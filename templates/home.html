@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DSA Tracker - Select Profile</title>
+</head>
+<body>
+    <h1>👋 Welcome to DSA Tracker</h1>
+    <h3>Select a Profile</h3>
+    <ul>
+        {% for profile in profiles %}
+            <li><a href="{{ url_for('profile', name=profile) }}">{{ profile.title() }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

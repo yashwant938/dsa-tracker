@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ name }}'s DSA Progress</title>
+</head>
+<body>
+    <h1>{{ name }}'s DSA Progress</h1>
+    <form method="POST">
+        {% for i in range(progress|length) %}
+            <div style="margin-bottom:10px;">
+                <strong>{{ progress[i].step }} - {{ progress[i].title }}</strong><br>
+                Solved: <input type="number" name="solved_{{ i }}" value="{{ progress[i].solved }}" min="0" max="{{ progress[i].total }}">
+                / {{ progress[i].total }}
+            </div>
+        {% endfor %}
+        <button type="submit">💾 Save Progress</button>
+    </form>
+    <br>
+    <a href="{{ url_for('home') }}">🔙 Back to Profiles</a>
+</body>
+</html>
